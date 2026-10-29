@@ -3,6 +3,10 @@
 Classifies a photo of a rice leaf as **Bacterial leaf blight**, **Brown spot** or **Leaf smut**.
 The project has the full analysis notebook, a **Flask** REST API, a **Streamlit** UI, and Docker/Render deployment.
 
+**Live demo** (Render free tier; the first visit after ~15 minutes idle takes up to a minute to wake up):
+- UI: https://riceleaf-ui.onrender.com
+- API: https://riceleaf-api.onrender.com/health
+
 ## Results at a glance
 
 | Model | Stage | 5-fold CV | Val acc | Test acc (18 imgs) |
