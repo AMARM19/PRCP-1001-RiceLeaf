@@ -1,0 +1,10 @@
+Data/
+data_clean/
+notebooks/
+reports/
+tests/
+models/*.keras
+**/__pycache__
+**/.ipynb_checkpoints
+.git
+*.docx

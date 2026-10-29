@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.jpg binary
+*.JPG binary
+*.png binary
+*.keras binary
+*.tflite binary
+*.docx binary

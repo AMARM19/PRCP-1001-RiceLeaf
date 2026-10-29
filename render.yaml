@@ -1,0 +1,23 @@
+# Render Blueprint: New > Blueprint > pick this repo. Creates two free Docker web services.
+# After the first deploy, set BACKEND_URL on the UI service to the API's public URL
+# (e.g. https://riceleaf-api.onrender.com) if Render assigned a different name.
+services:
+  - type: web
+    name: riceleaf-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+
+  - type: web
+    name: riceleaf-ui
+    runtime: docker
+    plan: free
+    dockerfilePath: ./frontend/Dockerfile
+    dockerContext: .
+    autoDeploy: true
+    envVars:
+      - key: BACKEND_URL
+        value: https://riceleaf-api.onrender.com

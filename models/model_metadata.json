@@ -1,0 +1,254 @@
+{
+  "model_name": "MobileNetV2 fine-tuned + aug",
+  "class_names": [
+    "Bacterial leaf blight",
+    "Brown spot",
+    "Leaf smut"
+  ],
+  "img_size": 224,
+  "created": "2026-10-29",
+  "preprocessing": "RGB -> crop to leaf (HSV saturation > 40, 1-99 pct bbox, 3% margin) -> resize 224x224 -> raw 0-255 floats",
+  "test_accuracy": 1.0,
+  "test_macro_f1": 1.0,
+  "val_accuracy": 1.0,
+  "tflite_test_accuracy": 1.0,
+  "n_images": {
+    "train": 83,
+    "val": 18,
+    "test": 18
+  },
+  "classification_report": {
+    "Bacterial leaf blight": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6.0
+    },
+    "Brown spot": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6.0
+    },
+    "Leaf smut": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 6.0
+    },
+    "accuracy": 1.0,
+    "macro avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 18.0
+    },
+    "weighted avg": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 18.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      6,
+      0,
+      0
+    ],
+    [
+      0,
+      6,
+      0
+    ],
+    [
+      0,
+      0,
+      6
+    ]
+  ],
+  "comparison": [
+    {
+      "model": "MobileNetV2 fine-tuned + aug",
+      "stage": "Improved",
+      "features": "raw pixels",
+      "cv_acc": null,
+      "cv_std": null,
+      "val_acc": 1.0,
+      "test_acc": 1.0,
+      "test_f1": 1.0,
+      "generalisation_gap": 0.0,
+      "params": 2261827.0,
+      "ms_per_img": 60.5302555559,
+      "train_s": 207.1879301071
+    },
+    {
+      "model": "MobileNetV2 frozen + aug",
+      "stage": "Improved",
+      "features": "raw pixels",
+      "cv_acc": null,
+      "cv_std": null,
+      "val_acc": 0.9444444444,
+      "test_acc": 1.0,
+      "test_f1": 1.0,
+      "generalisation_gap": 0.0194110274,
+      "params": 2261827.0,
+      "ms_per_img": 59.4487611112,
+      "train_s": 143.5113766193
+    },
+    {
+      "model": "EfficientNetB0 frozen + aug",
+      "stage": "Improved",
+      "features": "raw pixels",
+      "cv_acc": null,
+      "cv_std": null,
+      "val_acc": 0.9444444444,
+      "test_acc": 1.0,
+      "test_f1": 1.0,
+      "generalisation_gap": 0.055555582,
+      "params": 4053414.0,
+      "ms_per_img": 101.8421666668,
+      "train_s": 182.2810788155
+    },
+    {
+      "model": "MobileNetV2 frozen (no aug)",
+      "stage": "Improved",
+      "features": "raw pixels",
+      "cv_acc": null,
+      "cv_std": null,
+      "val_acc": 0.8333333333,
+      "test_acc": 1.0,
+      "test_f1": 1.0,
+      "generalisation_gap": 0.1666666865,
+      "params": 2261827.0,
+      "ms_per_img": 59.4450722225,
+      "train_s": 70.8714063168
+    },
+    {
+      "model": "LogReg (hand-crafted)",
+      "stage": "Baseline",
+      "features": "hand-crafted",
+      "cv_acc": 0.8023809524,
+      "cv_std": 0.082368565,
+      "val_acc": null,
+      "test_acc": 1.0,
+      "test_f1": 1.0,
+      "generalisation_gap": null,
+      "params": null,
+      "ms_per_img": 0.0206499996,
+      "train_s": 0.0525283813
+    },
+    {
+      "model": "SVM-RBF (hand-crafted)",
+      "stage": "Baseline",
+      "features": "hand-crafted",
+      "cv_acc": 0.8514285714,
+      "cv_std": 0.100040808,
+      "val_acc": null,
+      "test_acc": 1.0,
+      "test_f1": 1.0,
+      "generalisation_gap": null,
+      "params": null,
+      "ms_per_img": 0.0310611116,
+      "train_s": 0.0280797482
+    },
+    {
+      "model": "RandomForest (hand-crafted)",
+      "stage": "Baseline",
+      "features": "hand-crafted",
+      "cv_acc": 0.8019047619,
+      "cv_std": 0.0708132224,
+      "val_acc": null,
+      "test_acc": 1.0,
+      "test_f1": 1.0,
+      "generalisation_gap": null,
+      "params": null,
+      "ms_per_img": 0.60305,
+      "train_s": 2.0190749168
+    },
+    {
+      "model": "RandomForest tuned (hand-crafted)",
+      "stage": "Improved",
+      "features": "hand-crafted",
+      "cv_acc": 0.8028571429,
+      "cv_std": 0.1116298548,
+      "val_acc": null,
+      "test_acc": 1.0,
+      "test_f1": 1.0,
+      "generalisation_gap": null,
+      "params": null,
+      "ms_per_img": 0.677433333,
+      "train_s": 2.3383500576
+    },
+    {
+      "model": "MobileNetV2 embeddings + LogReg",
+      "stage": "Improved",
+      "features": "MobileNetV2 emb.",
+      "cv_acc": 0.890952381,
+      "cv_std": 0.049220684,
+      "val_acc": null,
+      "test_acc": 1.0,
+      "test_f1": 1.0,
+      "generalisation_gap": null,
+      "params": null,
+      "ms_per_img": 0.0419277777,
+      "train_s": 0.1055932045
+    },
+    {
+      "model": "Simple CNN + aug",
+      "stage": "Improved",
+      "features": "raw pixels",
+      "cv_acc": null,
+      "cv_std": null,
+      "val_acc": 0.9444444444,
+      "test_acc": 0.9444444444,
+      "test_f1": 0.9440559441,
+      "generalisation_gap": -0.1613118649,
+      "params": 97827.0,
+      "ms_per_img": 7.6079722219,
+      "train_s": 125.4452533722
+    },
+    {
+      "model": "SVM-RBF tuned (hand-crafted)",
+      "stage": "Improved",
+      "features": "hand-crafted",
+      "cv_acc": 0.8719047619,
+      "cv_std": 0.0731289669,
+      "val_acc": null,
+      "test_acc": 0.9444444444,
+      "test_f1": 0.9440559441,
+      "generalisation_gap": null,
+      "params": null,
+      "ms_per_img": 0.0384333333,
+      "train_s": 0.0376183987
+    },
+    {
+      "model": "KNN k=5 (hand-crafted)",
+      "stage": "Baseline",
+      "features": "hand-crafted",
+      "cv_acc": 0.7419047619,
+      "cv_std": 0.0981992052,
+      "val_acc": null,
+      "test_acc": 0.8888888889,
+      "test_f1": 0.8888888889,
+      "generalisation_gap": null,
+      "params": null,
+      "ms_per_img": 0.2074944447,
+      "train_s": 0.0383737087
+    },
+    {
+      "model": "Simple CNN (no aug)",
+      "stage": "Baseline",
+      "features": "raw pixels",
+      "cv_acc": null,
+      "cv_std": null,
+      "val_acc": 0.7777777778,
+      "test_acc": 0.7777777778,
+      "test_f1": 0.7723387723,
+      "generalisation_gap": -0.0187416673,
+      "params": 97827.0,
+      "ms_per_img": 11.0016777778,
+      "train_s": 42.1667096615
+    }
+  ]
+}
